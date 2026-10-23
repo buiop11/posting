@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# PyInstaller 중간 산출물 (dist의 EXE는 포함)
+ai-blog-studio/build/
+
+# OMC 상태
+.omc/
+
+# IDE
+.idea/
+.vscode/
+*.lnk

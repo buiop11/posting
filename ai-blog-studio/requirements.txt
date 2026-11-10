@@ -2,3 +2,6 @@ PySide6>=6.7
 openai>=1.40
 keyring>=25.0
 markdown-it-py>=3.0
+Pillow>=10.0
+# 0.4.9로 고정: 최신 버전의 ffmpeg 바이너리(100MB+)는 EXE가 GitHub 100MB 한도를 초과함
+imageio-ffmpeg==0.4.9

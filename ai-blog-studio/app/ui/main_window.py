@@ -23,6 +23,7 @@ from PySide6.QtWidgets import (
 from app.services.export_service import export_html
 from app.ui.editor_page import EditorPage
 from app.ui.generator_page import GeneratorPage
+from app.ui.media_page import MediaPage
 from app.ui.prompt_page import PromptPage
 from app.ui.settings_page import SettingsPage
 from app.ui.theme import stylesheet
@@ -45,6 +46,7 @@ class MainWindow(QMainWindow):
         # ----- 페이지 -----
         self.generator_page = GeneratorPage(self.settings)
         self.editor_page = EditorPage()
+        self.media_page = MediaPage()
         self.prompt_page = PromptPage()
         self.settings_page = SettingsPage(self.settings)
 
@@ -56,8 +58,9 @@ class MainWindow(QMainWindow):
         self.stack = QStackedWidget()
         self.stack.addWidget(self.generator_page)   # 0
         self.stack.addWidget(self.editor_page)      # 1
-        self.stack.addWidget(self.prompt_page)      # 2
-        self.stack.addWidget(self.settings_page)    # 3
+        self.stack.addWidget(self.media_page)       # 2
+        self.stack.addWidget(self.prompt_page)      # 3
+        self.stack.addWidget(self.settings_page)    # 4
 
         # ----- 사이드바 -----
         sidebar = QFrame()
@@ -73,7 +76,13 @@ class MainWindow(QMainWindow):
 
         self._nav_buttons: list[QPushButton] = []
         for index, (icon, text) in enumerate(
-            (("✦", "AI 글 작성"), ("✎", "직접 편집"), ("≡", "프롬프트"), ("⚙", "설정"))
+            (
+                ("✦", "AI 글 작성"),
+                ("✎", "직접 편집"),
+                ("▶", "미디어 도구"),
+                ("≡", "프롬프트"),
+                ("⚙", "설정"),
+            )
         ):
             button = QPushButton(f"{icon}  {text}")
             button.setObjectName("navButton")

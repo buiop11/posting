@@ -27,7 +27,7 @@ a = Analysis(
         'numpy', 'pandas', 'scipy', 'sklearn', 'matplotlib', 'sympy',
         'torch', 'torchaudio', 'torchvision', 'tensorflow', 'transformers',
         'numba', 'llvmlite', 'pyarrow', 'librosa', 'soundfile',
-        'PIL', 'cv2', 'IPython', 'jedi', 'parso', 'pytest', 'py',
+        'cv2', 'IPython', 'jedi', 'parso', 'pytest', 'py',
         'zmq', 'uvicorn', 'fastapi', 'psutil', 'fsspec', 'win32com',
         'pythoncom', 'notebook', 'jupyter', 'sqlite3',
     ],
